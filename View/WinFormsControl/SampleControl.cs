@@ -12,6 +12,32 @@ public partial class SampleControl : UserControl
     }
 
     //----------------------------------------------------------------
+    /**   画像をクリアする。
+    **
+    **/
+    public virtual void clearGraphics()
+    {
+        System.Drawing.Bitmap   imgCanvas;
+        System.Drawing.Graphics grpCanvas;
+
+        imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
+        grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
+
+        grpCanvas.FillRectangle(Brushes.White, grpCanvas.VisibleClipBounds)
+        grpCanvas.Dispose()
+
+        picView.Image = imgCanvas
+    }
+
+    //----------------------------------------------------------------
+    /**   デフォルトの描画処理を行う。
+    **
+    **/
+    public virtual void drawGraphics()
+    {
+    }
+
+    //----------------------------------------------------------------
     /**   MarginAreaColor プロパティ
     **
     **/
@@ -23,6 +49,19 @@ public partial class SampleControl : UserControl
     {
         get { return  this.m_marginColor; }
         set { this.m_marginColor = value; }
+    }
+
+    //----------------------------------------------------------------
+    /**   SourcePicture プロパティ
+    **
+    **/
+    [Browsable(true)
+      , Description("描画領域")
+      , Category("表示")
+    ]
+    public System.Windows.Forms.PictureBox SourcePicture
+    {
+        get { return  this.picView; }
     }
 
     //----------------------------------------------------------------
