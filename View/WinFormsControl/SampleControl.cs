@@ -93,6 +93,7 @@ public partial class SampleControl : UserControl
     **/
     private void btnClear_Click(object sender, EventArgs e)
     {
+        clearGraphics();
     }
 
     //----------------------------------------------------------------
