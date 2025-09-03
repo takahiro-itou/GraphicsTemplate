@@ -28,34 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SampleControl));
-            this.Label1 = new Label();
-            this.txtInput = new TextBox();
-            this.Label2 = new Label();
-            this.txtOutput = new TextBox();
-            this.btnRun = new Button();
-            this.btnClear = new Button();
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(SampleControl));
+            picView = new PictureBox();
+            btnRun = new Button();
+            btnClear = new Button();
+            ((System.ComponentModel.ISupportInitialize)picView).BeginInit();
             this.SuspendLayout();
-            //
-            // Label1
-            //
-            resources.ApplyResources(Label1, "Label1");
-            Label1.Name = "Label1";
-            //
-            // txtInput
-            //
-            resources.ApplyResources(txtInput, "txtInput");
-            txtInput.Name = "txtInput";
-            //
-            // Label2
-            resources.ApplyResources(Label2, "Label2");
-            Label2.Name = "Label2";
-            //
-            // txtOutput
-            //
-            resources.ApplyResources(txtOutput, "txtOutput");
-            txtOutput.Name = "txtOutput";
-            txtOutput.ReadOnly = true;
             //
             // btnRun
             //
@@ -71,27 +50,27 @@
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             //
+            // picView
+            //
+            resources.ApplyResources(picView, "picView");
+            picView.Name = "picView";
+            picView.TabStop = false;
+            //
             // SampleControl
             //
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(Label1);
-            this.Controls.Add(txtInput);
-            this.Controls.Add(Label2);
-            this.Controls.Add(txtOutput);
+            this.Controls.Add(picView);
             this.Controls.Add(btnRun);
             this.Controls.Add(btnClear);
             resources.ApplyResources(this, "$this");
             this.Name = "SampleControl";
-            this.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picView).EndInit();
             this.PerformLayout();
         }
 
         #endregion
 
-        private Label Label1;
-        private TextBox txtInput;
-        private Label Label2;
-        private TextBox txtOutput;
+        private PictureBox picView;
         private Button btnRun;
         private Button btnClear;
     }
