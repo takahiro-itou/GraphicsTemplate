@@ -67,8 +67,6 @@ namespace WinFormsControl
         **/
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtInput.Text = "";
-            txtOutput.Text = "";
         }
 
         //----------------------------------------------------------------

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources =
                 new System.ComponentModel.ComponentResourceManager(typeof(SampleControl));
-            picView = PictureBox();
+            picView = new PictureBox();
             btnRun = new Button();
             btnClear = new Button();
             ((System.ComponentModel.ISupportInitialize)picView).BeginInit();
