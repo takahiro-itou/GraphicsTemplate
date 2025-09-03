@@ -22,7 +22,8 @@ Partial Class MainView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainView))
+        Dim resources As System.ComponentModel.ComponentResourceManager = _
+            New System.ComponentModel.ComponentResourceManager(GetType(MainView))
 
         Me.DataGridView1 = New DataGridView()
         Me.mnuMain = New MenuStrip()

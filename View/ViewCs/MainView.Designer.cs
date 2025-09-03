@@ -29,7 +29,8 @@ partial class MainView
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
+        System.ComponentModel.ComponentResourceManager resources =
+            new System.ComponentModel.ComponentResourceManager(typeof(MainView));
 
         this.SampleControl1 = new WinFormsControl.SampleControl();
         this.DataGridView1 = new System.Windows.Forms.DataGridView();
