@@ -23,10 +23,10 @@ public partial class SampleControl : UserControl
         imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
         grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
 
-        grpCanvas.FillRectangle(Brushes.White, grpCanvas.VisibleClipBounds)
-        grpCanvas.Dispose()
+        grpCanvas.FillRectangle(Brushes.White, grpCanvas.VisibleClipBounds);
+        grpCanvas.Dispose();
 
-        picView.Image = imgCanvas
+        picView.Image = imgCanvas;
     }
 
     //----------------------------------------------------------------
