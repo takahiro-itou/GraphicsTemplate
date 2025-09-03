@@ -1,7 +1,7 @@
 ﻿namespace ViewCs
 {
 
-partial class Form1
+partial class MainView
 {
     /// <summary>
     ///  Required designer variable.
@@ -29,7 +29,7 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
 
         this.SampleControl1 = new WinFormsControl.SampleControl();
         this.DataGridView1 = new System.Windows.Forms.DataGridView();
@@ -54,13 +54,13 @@ partial class Form1
         this.DataGridView1.RowTemplate.Height = 25;
 
         //
-        // Form1
+        // MainView
         //
         this.AutoScaleMode = AutoScaleMode.None;
         resources.ApplyResources(this, "$this");
         this.Controls.Add(this.SampleControl1);
         this.Controls.Add(this.DataGridView1);
-        this.Name = "Form1";
+        this.Name = "MainView";
 
         ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
         this.ResumeLayout(false);

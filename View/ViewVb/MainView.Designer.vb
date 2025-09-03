@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class MainView
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainView))
 
         Me.DataGridView1 = New DataGridView()
         Me.mnuMain = New MenuStrip()
@@ -87,7 +87,7 @@ Partial Class Form1
         Me.DataGridView1.RowTemplate.Height = 25
 
         '
-        ' Form1
+        ' MainView
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = AutoScaleMode.None
@@ -95,7 +95,7 @@ Partial Class Form1
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.mnuMain)
         Me.MainMenuStrip = Me.mnuMain
-        Me.Name = "Form1"
+        Me.Name = "MainView"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.mnuMain.ResumeLayout(False)
         Me.mnuMain.PerformLayout()
