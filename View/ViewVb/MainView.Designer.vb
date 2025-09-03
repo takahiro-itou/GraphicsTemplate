@@ -75,9 +75,7 @@ Partial Class MainView
         ' SampleControl1
         '
         resources.ApplyResources(SampleControl1, "SampleControl1")
-        SampleControl1.InputText = ""
         SampleControl1.Name = "SampleControl1"
-        SampleControl1.OutputText = ""
         '
         ' DataGridView1
         '

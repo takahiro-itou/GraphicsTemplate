@@ -10,6 +10,7 @@ namespace WinFormsControl
             InitializeComponent();
         }
 
+#if false
         //----------------------------------------------------------------
         //    InputText プロパティ
         //
@@ -35,6 +36,7 @@ namespace WinFormsControl
             get { return txtOutput.Text; }
             set { txtOutput.Text = value; }
         }
+#endif
 
         //----------------------------------------------------------------
         /**   RunButtonClick イベント

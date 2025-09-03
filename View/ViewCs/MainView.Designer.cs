@@ -41,9 +41,7 @@ partial class MainView
         // SampleControl1
         //
         resources.ApplyResources(SampleControl1, "SampleControl1");
-        this.SampleControl1.InputText = "";
         this.SampleControl1.Name = "SampleControl1";
-        this.SampleControl1.OutputText = "";
         this.SampleControl1.RunButtonClick += this.SampleControl1_RunButtonClick;
         //
         // DataGridView1
