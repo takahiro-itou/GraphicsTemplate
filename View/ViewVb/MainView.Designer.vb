@@ -25,52 +25,50 @@ Partial Class MainView
         Dim resources As System.ComponentModel.ComponentResourceManager = _
             New System.ComponentModel.ComponentResourceManager(GetType(MainView))
 
-        Me.DataGridView1 = New DataGridView()
-        Me.mnuMain = New MenuStrip()
-        Me.mnuFile = New ToolStripMenuItem()
-        Me.mnuFileExit = New ToolStripMenuItem()
-        Me.mnuRun = New ToolStripMenuItem()
-        Me.mnuRunCount = New ToolStripMenuItem()
+        mnuMain = New MenuStrip()
+        mnuFile = New ToolStripMenuItem()
+        mnuFileExit = New ToolStripMenuItem()
+        mnuRun = New ToolStripMenuItem()
+        mnuRunCount = New ToolStripMenuItem()
 
-        Me.OpenFileDialog1 = New OpenFileDialog()
-        Me.SampleControl1 = New WinFormsControl.SampleControl()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.mnuMain.SuspendLayout()
+        OpenFileDialog1 = New OpenFileDialog()
+        SampleControl1 = New WinFormsControl.SampleControl()
+        mnuMain.SuspendLayout()
         Me.SuspendLayout()
         '
         ' mnuMain
         '
-        resources.ApplyResources(Me.mnuMain, "mnuMain")
-        Me.mnuMain.Items.AddRange(New ToolStripItem() {mnuFile, mnuRun})
-        Me.mnuMain.Name = "mnuMain"
+        resources.ApplyResources(mnuMain, "mnuMain")
+        mnuMain.Items.AddRange(New ToolStripItem() {mnuFile, mnuRun})
+        mnuMain.Name = "mnuMain"
         '
         ' mnuFile
         '
-        resources.ApplyResources(Me.mnuFile, "mnuFile")
-        Me.mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileExit})
-        Me.mnuFile.Name = "mnuFilem"
+        resources.ApplyResources(mnuFile, "mnuFile")
+        mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileExit})
+        mnuFile.Name = "mnuFilem"
         '
         ' mnuFileExit
         '
-        resources.ApplyResources(Me.mnuFileExit, "mnuFileExit")
-        Me.mnuFileExit.Name = "mnuFileExit"
+        resources.ApplyResources(mnuFileExit, "mnuFileExit")
+        mnuFileExit.Name = "mnuFileExit"
         '
         ' mnuRun
         '
-        resources.ApplyResources(Me.mnuRun, "mnuRun")
-        Me.mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunCount})
-        Me.mnuRun.Name = "mnuRun"
+        resources.ApplyResources(mnuRun, "mnuRun")
+        mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunCount})
+        mnuRun.Name = "mnuRun"
         '
         ' mnuRunCount
         '
-        resources.ApplyResources(Me.mnuRunCount, "mnuRunCount")
-        Me.mnuRunCount.Name = "mnuRunCount"
+        resources.ApplyResources(mnuRunCount, "mnuRunCount")
+        mnuRunCount.Name = "mnuRunCount"
 
         '
         ' OpenFileDialog1
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        resources.ApplyResources(Me.OpenFileDialog1, "OpenFileDialog1")
+        OpenFileDialog1.FileName = "OpenFileDialog1"
+        resources.ApplyResources(OpenFileDialog1, "OpenFileDialog1")
 
         '
         ' SampleControl1
@@ -80,31 +78,28 @@ Partial Class MainView
         '
         ' DataGridView1
         '
-        resources.ApplyResources(Me.DataGridView1, "DataGridView1")
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 25
+        resources.ApplyResources(DataGridView1, "DataGridView1")
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowTemplate.Height = 25
 
         '
         ' MainView
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = AutoScaleMode.None
-        Me.Controls.Add(Me.SampleControl1)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.mnuMain)
+        Me.Controls.Add(SampleControl1)
+        Me.Controls.Add(mnuMain)
         Me.MainMenuStrip = Me.mnuMain
         Me.Name = "MainView"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.mnuMain.ResumeLayout(False)
-        Me.mnuMain.PerformLayout()
+        mnuMain.ResumeLayout(False)
+        mnuMain.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents SampleControl1 As WinFormsControl.SampleControl
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents mnuMain As MenuStrip
     Friend WithEvents mnuFile As ToolStripMenuItem
     Friend WithEvents mnuFileExit As ToolStripMenuItem
