@@ -1,15 +1,10 @@
 ﻿Public Class MainView
 
-Private Sub RunCount(ByVal message As String)
-    Dim result As Integer
-    Dim outText As String
-    Dim objWrapper As SampleWrapper.Common.SampleDocument = New SampleWrapper.Common.SampleDocument()
+Private Sub showGraphics()
+''--------------------------------------------------------------------
+''    画像を表示する
+''--------------------------------------------------------------------
 
-    objWrapper.setMessage(message)
-    result = objWrapper.countAlphabet()
-    outText = "入力した文字列中のアルファベットの個数は " & result
-    SampleControl1.OutputText = outText
-    MsgBox(outText, MsgBoxStyle.OkOnly)
 End Sub
 
 Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
@@ -25,17 +20,7 @@ Private Sub mnuRunCount_Click(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 ''    メニュー「実行」－「カウント」
 ''--------------------------------------------------------------------
-    RunCount(SampleControl1.InputText)
-End Sub
-
-Private Sub SampleControl1_RunButtonClick(sender As Object, e As EventArgs) _
-    Handles SampleControl1.RunButtonClick
-''--------------------------------------------------------------------
-''    イベントハンドラ
-''
-''    ユーザーコントロールの「実行ボタンクリック」
-''--------------------------------------------------------------------
-    RunCount(SampleControl1.InputText)
+    showGraphics()
 End Sub
 
 End Class
