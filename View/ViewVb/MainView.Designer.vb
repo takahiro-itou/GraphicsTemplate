@@ -75,13 +75,6 @@ Partial Class MainView
         '
         resources.ApplyResources(SampleControl1, "SampleControl1")
         SampleControl1.Name = "SampleControl1"
-        '
-        ' DataGridView1
-        '
-        resources.ApplyResources(DataGridView1, "DataGridView1")
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowTemplate.Height = 25
 
         '
         ' MainView
