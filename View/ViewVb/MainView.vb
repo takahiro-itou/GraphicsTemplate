@@ -4,7 +4,7 @@ Private Sub showGraphics()
 ''--------------------------------------------------------------------
 ''    画像を表示する
 ''--------------------------------------------------------------------
-
+    SampleControl1.drawGraphics()
 End Sub
 
 Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
@@ -21,6 +21,16 @@ Private Sub mnuRunCount_Click(sender As Object, e As EventArgs) Handles _
 ''    メニュー「実行」－「カウント」
 ''--------------------------------------------------------------------
     showGraphics()
+End Sub
+
+Private Sub SampleControl1_RunButtonClick(sender As Object, e As EventArgs) _
+    Handles SampleControl1.RunButtonClick
+''--------------------------------------------------------------------
+''    イベントハンドラ
+''
+''    ユーザーコントロールの「実行ボタンクリック」
+''--------------------------------------------------------------------
+    showGraphics();
 End Sub
 
 End Class
