@@ -67,7 +67,7 @@
     <value>True</value>
   </metadata>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
+    <value>MainView</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -95,13 +95,103 @@
     <value>4</value>
   </data>
   <data name="DataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 168</value>
+    <value>22, 168</value>
   </data>
   <data name="DataGridView1.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 150</value>
   </data>
   <data name="DataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+
+  <data name="&gt;&gt;mnuFile.Name" xml:space="preserve">
+    <value>mnuFile</value>
+  </data>
+  <data name="&gt;&gt;mnuFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="mnuFile.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+
+  <data name="&gt;&gt;mnuFileExit.Name" xml:space="preserve">
+    <value>mnuFileExit</value>
+  </data>
+  <data name="&gt;&gt;mnuFileExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 22</value>
+  </data>
+  <data name="mnuFileExit.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+
+  <metadata name="mnuMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="&gt;&gt;mnuMain.Name" xml:space="preserve">
+    <value>mnuMain</value>
+  </data>
+  <data name="&gt;&gt;mnuMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mnuMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mnuMain.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="mnuMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mnuMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 24</value>
+  </data>
+  <data name="mnuMain.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="mnuMain.Text" xml:space="preserve">
+    <value>mnuMain</value>
+  </data>
+
+  <data name="&gt;&gt;mnuRun.Name" xml:space="preserve">
+    <value>mnuRun</value>
+  </data>
+  <data name="&gt;&gt;mnuRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="mnuRun.Text" xml:space="preserve">
+    <value>&amp;Run</value>
+  </data>
+
+  <data name="&gt;&gt;mnuRunCount.Name" xml:space="preserve">
+    <value>mnuRunCount</value>
+  </data>
+  <data name="&gt;&gt;mnuRunCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuRunCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 22</value>
+  </data>
+  <data name="mnuRunCount.Text" xml:space="preserve">
+    <value>&amp;Count</value>
+  </data>
+
+  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <data name="&gt;&gt;OpenFileDialog1.Name" xml:space="preserve">
+    <value>OpenFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;OpenFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
   <data name="&gt;&gt;SampleControl1.Name" xml:space="preserve">
@@ -117,25 +207,25 @@
     <value>0</value>
   </data>
   <data name="SampleControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="SampleControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt</value>
   </data>
   <data name="SampleControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 36</value>
+    <value>16, 40</value>
   </data>
   <data name="SampleControl1.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 104</value>
+    <value>0, 0</value>
   </data>
   <data name="SampleControl1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>256, 104</value>
+    <value>300, 280</value>
   </data>
   <data name="SampleControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 104</value>
+    <value>400, 280</value>
   </data>
   <data name="SampleControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
 
 </root>
