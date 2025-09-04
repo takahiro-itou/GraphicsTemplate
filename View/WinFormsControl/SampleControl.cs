@@ -37,8 +37,11 @@ public partial class SampleControl : UserControl
     {
         System.Drawing.Bitmap   imgCanvas, imgBuffer;
         System.Drawing.Graphics grpCanvas, grpBuffer;
+        IntPtr  hDisplayDC, hDC;
         System.Drawing.Brush    brushBG;
         System.Drawing.Color    colorBG;
+
+        hDisplayDC = WinAPI.GetDC(IntPtr.Zero);
 
         imgBuffer = new System.Drawing.Bitmap(200, 100);
         grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer);
@@ -54,6 +57,13 @@ public partial class SampleControl : UserControl
         imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
         grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
         grpCanvas.FillRectangle(Brushes.White, grpCanvas.VisibleClipBounds);
+
+        hDC = grpCanvas.GetHdc();
+        WinAPI.BitBlt(hDC, 8, 8, 284, 284, hDisplayDC, 0, 0, WinAPI.SRCCOPY);
+        grpCanvas.ReleaseHdc(hDC);
+
+        WinAPI.ReleaseDC(IntPtr.Zero, hDisplayDC);
+
         grpCanvas.DrawImage(imgBuffer, 50, 100, 200, 100);
         grpCanvas.Dispose();
 
