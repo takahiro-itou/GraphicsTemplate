@@ -35,6 +35,16 @@ public partial class SampleControl : UserControl
     **/
     public virtual void drawGraphics()
     {
+        System.Drawing.Bitmap   imgCanvas, imgBuffer;
+        System.Drawing.Graphics grpCanvas, grpBuffer;
+        System.Drawing.Brush    brushBG;
+        System.Drawing.Color    colorBG;
+
+        imgBuffer = new System.Drawing.Bitmap(200, 100);
+        grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer);
+
+        colorBG = System.Drawing.Color.FromArgb(0xFF, 0xBA, 0xF0, 0xFE);
+        brushBG = new System.Drawing.SolidBrush(colorBG);
     }
 
     //----------------------------------------------------------------
