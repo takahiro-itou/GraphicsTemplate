@@ -30,7 +30,7 @@ Private Sub SampleControl1_RunButtonClick(sender As Object, e As EventArgs) _
 ''
 ''    ユーザーコントロールの「実行ボタンクリック」
 ''--------------------------------------------------------------------
-    showGraphics();
+    showGraphics()
 End Sub
 
 End Class
