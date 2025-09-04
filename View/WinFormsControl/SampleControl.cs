@@ -43,15 +43,18 @@ public partial class SampleControl : UserControl
         imgBuffer = new System.Drawing.Bitmap(200, 100);
         grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer);
 
+        grpBuffer.FillRectangle(Brushes.Black, grpBuffer.VisibleClipBounds);
+        grpBuffer.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300);
+        grpBuffer.DrawRectangle(Pens.Yellow, 50, 30, 100, 60);
+        grpBuffer.Dispose();
+
         colorBG = System.Drawing.Color.FromArgb(0xFF, 0xBA, 0xF0, 0xFE);
         brushBG = new System.Drawing.SolidBrush(colorBG);
 
         imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
         grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
-
-        grpCanvas.FillRectangle(Brushes.Black, grpCanvas.VisibleClipBounds);
-        grpCanvas.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300);
-        grpCanvas.DrawRectangle(Pens.Yellow, 50, 30, 100, 60);
+        grpCanvas.FillRectangle(Brushes.White, grpCanvas.VisibleClipBounds);
+        grpCanvas.DrawImage(imgBuffer, 50, 100, 200, 100);
         grpCanvas.Dispose();
 
         picView.Image = imgCanvas;
