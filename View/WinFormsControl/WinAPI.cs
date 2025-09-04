@@ -19,6 +19,12 @@ internal class WinAPI
         int ySrc,
         int dwRop);
 
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetDC(IntPtr hWnd);
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr ReleaseDC(IntPtr hWnd, IntPtr hDC);
+
 }   //  End of class WinAPI
 
 }   //  End of namespace WinFormsControl
