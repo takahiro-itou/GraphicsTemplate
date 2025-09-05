@@ -47,6 +47,14 @@ public partial class SampleControl : UserControl
         grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer);
 
         grpBuffer.FillRectangle(Brushes.Black, grpBuffer.VisibleClipBounds);
+
+        hDC = grpBuffer.GetHdc();
+        WinAPI.BitBlt(hDC, 8, 8, 184, 84, hDisplayDC,
+                Screen.PrimaryScreen.Bounds.Width - 184,
+                Screen.PrimaryScreen.Bounds.Height - 84,
+                WinAPI.SRCCOPY);
+        grpBuffer.ReleaseHdc(hDC);
+
         grpBuffer.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300);
         grpBuffer.DrawRectangle(Pens.Yellow, 50, 30, 100, 60);
         grpBuffer.Dispose();
