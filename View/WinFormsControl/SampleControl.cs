@@ -74,7 +74,7 @@ public partial class SampleControl : UserControl
 
         WinAPI.ReleaseDC(IntPtr.Zero, hDisplayDC);
 
-        colorBG = System.Drawing.Color.FromArgb(0x80, 0x00, 0xFF, 0x00);
+        colorBG = System.Drawing.Color.FromArgb(0x40, 0x00, 0xFF, 0x00);
         brushBG = new System.Drawing.SolidBrush(colorBG);
         grpCanvas.FillRectangle(brushBG, grpCanvas.VisibleClipBounds);
 
