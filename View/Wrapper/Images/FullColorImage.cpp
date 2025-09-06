@@ -131,6 +131,15 @@ FullColorImage::drawImage(
         const  int  sx,
         const  int  sy)
 {
+    HDC     hMemDC  = ::CreateCompatibleDC(hDC);
+    HGDIOBJ hOldBmp = ::SelectObject(hMemDC, this->m_hBitmap);
+
+    ::BitBlt(hDC, dx, dy, w, h, hMemDC, sx, sy, SRCCOPY);
+    ::GdiFlush();
+
+    ::SelectObject(hMemDC, hOldBmp);
+    ::DeleteDC(hMemDC);
+
     return ( 0 );
 }
 
