@@ -143,10 +143,48 @@ FullColorImage::drawImage(
     return ( 0 );
 }
 
+//----------------------------------------------------------------
+//    サンプル画像を描画する。
+//
+
+void
+FullColorImage::drawSample()
+{
+    fillRectanble( 0,  0, this->m_iW, this->m_iH, 0x00FFFFFF);
+    fillRectanble(32, 32,  64,  64, 0x000000FF);
+    fillRectanble(64, 32, 128,  64, 0x0000FF00);
+    fillRectanble(32, 64,  64, 128, 0x00FF0000);
+    fillRectanble(64, 64, 128, 128, 0x0000FFFF);
+}
+
 //========================================================================
 //
 //    Public Member Functions.
 //
+
+//----------------------------------------------------------------
+
+void
+FullColorImage::fillRectanble(
+        const  int  x1,
+        const  int  y1,
+        const  int  x2,
+        const  int  y2,
+        const  int  color)
+{
+    const  char  cB = ( color        & 0xFF);
+    const  char  cG = ((color >>  8) & 0xFF);
+    const  char  cR = ((color >> 16) & 0xFF);
+
+    for ( int y = y1; y < y2; ++ y ) {
+        char *  ptr = static_cast<char *>(getBits(x1, y));
+        for ( int x = x1; x < x2; ++ x ) {
+            *(ptr ++) = cB;
+            *(ptr ++) = cG;
+            *(ptr ++) = cR;
+        }
+    }
+}
 
 //========================================================================
 //
@@ -267,6 +305,16 @@ FullColorImage::drawImage(
         const  int  sy)
 {
     return  this->m_ptrObj->drawImage(hDC, dx, dy, w, h, sx, sy);
+}
+
+//----------------------------------------------------------------
+//    サンプル画像を描画する。
+//
+
+void
+FullColorImage::drawSample()
+{
+    return  this->m_ptrObj->drawSample();
 }
 
 //========================================================================

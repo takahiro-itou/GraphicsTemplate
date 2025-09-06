@@ -101,15 +101,61 @@ public:
             const  int  sx,
             const  int  sy);
 
+    //----------------------------------------------------------------
+    /**   サンプル画像を描画する。
+    **
+    **/
+    virtual  void
+    drawSample();
+
 //========================================================================
 //
 //    Public Member Functions.
 //
+public:
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    void
+    fillRectanble(
+            const  int  x1,
+            const  int  y1,
+            const  int  x2,
+            const  int  y2,
+            const  int  color);
 
 //========================================================================
 //
 //    Accessors.
 //
+public:
+
+    const  void  *  getBits()  const { return ( this->m_lpBits ); }
+    void  * getBits() { return ( this->m_lpBits ); }
+
+    const  unsigned
+    getOffset(const int x, const int y) const
+    {
+        return ( (this->m_iH - y - 1) * this->m_bytesPerLine
+                 + (x * this->m_bytesPerPixel)
+        );
+    }
+
+    const  void  *  getBits(const int x, const int y) const
+    {
+        return ( static_cast<const char *>(getBits())
+                 + getOffset(x, y)
+        );
+    }
+
+    void  *  getBits(const int x, const int y)
+    {
+        return ( static_cast<char *>(getBits())
+                 + getOffset(x, y)
+        );
+    }
 
 //========================================================================
 //
@@ -250,6 +296,13 @@ public:
             const  int  h,
             const  int  sx,
             const  int  sy);
+
+    //----------------------------------------------------------------
+    /**   サンプル画像を描画する。
+    **
+    **/
+    virtual  void
+    drawSample();
 
 //========================================================================
 //
