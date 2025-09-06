@@ -151,10 +151,10 @@ void
 FullColorImage::drawSample()
 {
     fillRectanble( 0,  0, this->m_iW, this->m_iH, 0x00FFFFFF);
-    fillRectanble(32, 32,  64,  64, 0x000000FF);
-    fillRectanble(64, 32, 128,  64, 0x0000FF00);
-    fillRectanble(32, 64,  64, 128, 0x00FF0000);
-    fillRectanble(64, 64, 128, 128, 0x0000FFFF);
+    fillRectanble(32, 32, 64, 64, 0x000000FF);
+    fillRectanble(64, 32, 96, 64, 0x0000FF00);
+    fillRectanble(32, 64, 64, 96, 0x00FF0000);
+    fillRectanble(64, 64, 96, 96, 0x0000FFFF);
 }
 
 //========================================================================
@@ -283,11 +283,14 @@ FullColorImage::!FullColorImage()
 
 int
 FullColorImage::createImage(
-        const  HDC  hDC,
+        IntPtr      hDC,
         const  int  nWidth,
         const  int  nHeight)
 {
-    return  this->m_ptrObj->createImage(hDC, nWidth, nHeight);
+    return  this->m_ptrObj->createImage(
+                static_cast<HDC>(hDC.ToPointer()),
+                nWidth, nHeight
+    );
 }
 
 //----------------------------------------------------------------
@@ -296,7 +299,7 @@ FullColorImage::createImage(
 
 int
 FullColorImage::drawImage(
-        const  HDC  hDC,
+        IntPtr      hDC,
         const  int  dx,
         const  int  dy,
         const  int  w,
@@ -304,7 +307,10 @@ FullColorImage::drawImage(
         const  int  sx,
         const  int  sy)
 {
-    return  this->m_ptrObj->drawImage(hDC, dx, dy, w, h, sx, sy);
+    return  this->m_ptrObj->drawImage(
+                static_cast<HDC>(hDC.ToPointer()),
+                dx, dy, w, h, sx, sy
+    );
 }
 
 //----------------------------------------------------------------

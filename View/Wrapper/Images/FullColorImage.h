@@ -279,7 +279,7 @@ public:
     **/
     virtual  int
     createImage(
-            const  HDC  hDC,
+            IntPtr      hDC,
             const  int  nWidth,
             const  int  nHeight);
 
@@ -289,7 +289,7 @@ public:
     **/
     virtual  int
     drawImage(
-            const  HDC  hDC,
+            IntPtr      hDC,
             const  int  dx,
             const  int  dy,
             const  int  w,
