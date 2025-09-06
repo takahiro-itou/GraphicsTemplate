@@ -138,14 +138,14 @@
 
   <ItemGroup>
     <ClInclude Include="..\Wrapper\resource.h" />
-    <ClInclude Include="..\Wrapper\Stdafx.h" />
+    <ClInclude Include="..\Wrapper\StdAfx.h" />
     <ClInclude Include="..\Wrapper\Wrapper.h" />
     <ClInclude Include="..\Wrapper\Images\FullColorImage.h" />
   </ItemGroup>
 
   <ItemGroup>
     <ClCompile Include="..\Wrapper\AssemblyInfo.cpp" />
-    <ClCompile Include="..\Wrapper\Stdafx.cpp">
+    <ClCompile Include="..\Wrapper\StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
