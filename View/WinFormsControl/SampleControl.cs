@@ -46,7 +46,9 @@ public partial class SampleControl : UserControl
         imgBuffer = new System.Drawing.Bitmap(200, 100);
         grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer);
 
-        grpBuffer.FillRectangle(Brushes.Black, grpBuffer.VisibleClipBounds);
+        colorBG = System.Drawing.Color.FromArgb(0xFF, 0xBA, 0xF0, 0xFE);
+        brushBG = new System.Drawing.SolidBrush(colorBG);
+        grpBuffer.FillRectangle(brushBG, grpBuffer.VisibleClipBounds);
 
         hDC = grpBuffer.GetHdc();
         WinAPI.BitBlt(hDC, 8, 8, 184, 84, hDisplayDC,
@@ -59,12 +61,12 @@ public partial class SampleControl : UserControl
         grpBuffer.DrawRectangle(Pens.Yellow, 50, 30, 100, 60);
         grpBuffer.Dispose();
 
-        colorBG = System.Drawing.Color.FromArgb(0xFF, 0xBA, 0xF0, 0xFE);
-        brushBG = new System.Drawing.SolidBrush(colorBG);
-
         imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
         grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
-        grpCanvas.FillRectangle(Brushes.White, grpCanvas.VisibleClipBounds);
+
+        colorBG = System.Drawing.Color.FromArgb(0x80, 0x00, 0xFF, 0x00);
+        brushBG = new System.Drawing.SolidBrush(colorBG);
+        grpCanvas.FillRectangle(brushBG, grpCanvas.VisibleClipBounds);
 
         hDC = grpCanvas.GetHdc();
         WinAPI.BitBlt(hDC, 8, 8, 284, 284, hDisplayDC, 0, 0, WinAPI.SRCCOPY);
