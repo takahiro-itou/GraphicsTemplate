@@ -109,7 +109,7 @@ FullColorImage::createImage(
     this->m_bInfoHeader.biCompression   = BI_RGB;
     this->m_bInfoHeader.biSizeImage     = this->m_bytesPerLine * nHeight;
 
-    this->m_Info    = (BITMAPINFO *)(this->m_InfoHeader);
+    this->m_Info    = (BITMAPINFO *)(this->m_bInfoHeader);
     this->m_hBitmap = CreateDIBSection(
                             hDC, this->m_Info, DIB_RGB_COLORS,
                             (&m_lpBits), NULL, 0);
