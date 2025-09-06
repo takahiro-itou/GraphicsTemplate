@@ -84,6 +84,7 @@ public:
 //
 //    Public Member Functions (Virtual Functions).
 //
+public:
 
 //========================================================================
 //
@@ -106,6 +107,24 @@ public:
 //
 //    For Internal Use Only.
 //
+private:
+
+    inline  static  unsigned
+    getBytesPerLine(
+            const  int  nWidth,
+            const  int  nDepth)
+    {
+        return  static_cast<unsigned>(
+            (((long)nWidth * nDepth + 31) / 32) * 4
+        );
+    }
+
+    inline  static  unsigned
+    getBytesPerPixel(
+            const  int  nDepth)
+    {
+        return  static_cast<unsigned>((nDepth + 7) / 8);
+    }
 
 //========================================================================
 //
