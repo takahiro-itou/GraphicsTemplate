@@ -90,7 +90,31 @@ FullColorImage::createImage(
         const  int  nWidth,
         const  int  nHeight)
 {
-    return ( 0 );
+    this->m_iW  = nWidth;
+    this->m_iH  = nHeight;
+    this->m_iD  = 24;
+
+    this->m_bytesPerLine    = getBytesPerLine(nWidth, 24);
+    this->m_bytesPerPixel   = getBytesPerPixel(24);
+
+    this->m_bInfoHeader.biSize          = sizeof(BITMAPINFOHEADER);
+    this->m_bInfoHeader.biWidth         = nWidth;
+    this->m_bInfoHeader.biHeight        = nHeight;
+    this->m_bInfoHeader.biBitCount      = 24;
+    this->m_bInfoHeader.biPlanes        = 1;
+    this->m_bInfoHeader.biXPelsPerMeter = 0;
+    this->m_bInfoHeader.biYPelsPerMeter = 0;
+    this->m_bInfoHeader.biClrUsed       = 0;
+    this->m_bInfoHeader.biClrImportant  = 0;
+    this->m_bInfoHeader.biCompression   = BI_RGB;
+    this->m_bInfoHeader.biSizeImage     = this->m_bytesPerLine * nHeight;
+
+    this->m_Info    = (BITMAPINFO *)(this->m_InfoHeader);
+    this->m_hBitmap = CreateDIBSection(
+                            hDC, this->m_Info, DIB_RGB_COLORS,
+                            (&m_lpBits), NULL, 0);
+
+    return ( this->m_hBitmap != 0 );
 }
 
 //----------------------------------------------------------------
