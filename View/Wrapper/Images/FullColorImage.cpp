@@ -90,6 +90,36 @@ FullColorImage::!FullColorImage()
 //    Public Member Functions (Virtual Functions).
 //
 
+//----------------------------------------------------------------
+//    イメージを作成する。
+//
+
+int
+FullColorImage::createImage(
+        const  HDC  hDC,
+        const  int  nWidth,
+        const  int  nHeight)
+{
+    return ( 0 );
+}
+
+//----------------------------------------------------------------
+//    イメージをデバイスに表示する。
+//
+
+int
+FullColorImage::drawImage(
+        const  HDC  hDC,
+        const  int  dx,
+        const  int  dy,
+        const  int  w,
+        const  int  h,
+        const  int  sx,
+        const  int  sy)
+{
+    return ( 0 );
+}
+
 //========================================================================
 //
 //    Public Member Functions.

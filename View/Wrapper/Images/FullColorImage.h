@@ -86,6 +86,30 @@ public:
 //
 public:
 
+    //----------------------------------------------------------------
+    /**   イメージを作成する。
+    **
+    **/
+    virtual  int
+    createImage(
+            const  HDC  hDC,
+            const  int  nWidth,
+            const  int  nHeight);
+
+    //----------------------------------------------------------------
+    /**   イメージをデバイスに表示する。
+    **
+    **/
+    virtual  int
+    drawImage(
+            const  HDC  hDC,
+            const  int  dx,
+            const  int  dy,
+            const  int  w,
+            const  int  h,
+            const  int  sx,
+            const  int  sy);
+
 //========================================================================
 //
 //    Public Member Functions.
