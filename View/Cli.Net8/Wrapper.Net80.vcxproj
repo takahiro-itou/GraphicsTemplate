@@ -102,6 +102,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>
+        Gdi32.lib
       </AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
