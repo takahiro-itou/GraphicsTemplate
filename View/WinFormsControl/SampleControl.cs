@@ -46,7 +46,7 @@ public partial class SampleControl : UserControl
         imgBuffer = new System.Drawing.Bitmap(200, 100);
         grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer);
 
-        colorBG = System.Drawing.Color.FromArgb(0xFF, 0xBA, 0xF0, 0xFE);
+        colorBG = System.Drawing.Color.FromArgb(0xFF, 0xFE, 0xF0, 0xBA);
         brushBG = new System.Drawing.SolidBrush(colorBG);
         grpBuffer.FillRectangle(brushBG, grpBuffer.VisibleClipBounds);
 
