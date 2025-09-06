@@ -52,8 +52,8 @@ public partial class SampleControl : UserControl
 
         hDC = grpBuffer.GetHdc();
         WinAPI.BitBlt(hDC, 8, 8, 184, 84, hDisplayDC,
-                Screen.PrimaryScreen.Bounds.Width - 184,
-                Screen.PrimaryScreen.Bounds.Height - 84,
+                (Screen.PrimaryScreen?.Bounds.Width ?? 640) - 184,
+                (Screen.PrimaryScreen?.Bounds.Height ?? 480) - 84,
                 WinAPI.SRCCOPY);
         grpBuffer.ReleaseHdc(hDC);
 
