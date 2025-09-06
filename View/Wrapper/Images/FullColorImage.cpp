@@ -158,6 +158,7 @@ namespace  {
 //
 
 FullColorImage::FullColorImage()
+    : m_ptrObj { new WrapTarget() }
 {
 }
 
@@ -168,6 +169,9 @@ FullColorImage::FullColorImage()
 
 FullColorImage::~FullColorImage()
 {
+    //  マネージドリソースを破棄する。              //
+
+    //  続いて、アンマネージドリソースも破棄する。  //
     this->!FullColorImage();
 }
 
@@ -178,6 +182,8 @@ FullColorImage::~FullColorImage()
 
 FullColorImage::!FullColorImage()
 {
+    delete  this->m_ptrObj;
+    this->m_ptrObj  = nullptr;
 }
 
 //========================================================================
@@ -210,7 +216,7 @@ FullColorImage::createImage(
         const  int  nWidth,
         const  int  nHeight)
 {
-    return ( 0 );
+    return  this->m_ptrObj->createImage(hDC, nWidth, nHeight);
 }
 
 //----------------------------------------------------------------
@@ -227,7 +233,7 @@ FullColorImage::drawImage(
         const  int  sx,
         const  int  sy)
 {
-    return ( 0 );
+    return  this->m_ptrObj->drawImage(hDC, dx, dy, w, h, sx, sy);
 }
 
 //========================================================================

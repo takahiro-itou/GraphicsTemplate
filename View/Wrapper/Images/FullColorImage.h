@@ -145,6 +145,17 @@ private:
 //
 private:
 
+    int         m_iW;
+    int         m_iH;
+    int         m_iD;
+
+    unsigned            m_bytesPerLine;
+    unsigned            m_bytesPerPixel;
+
+    void *              m_lpBits;
+    BITMAPINFO *        m_Info;
+    BITMAPINFOHEADER    m_bInfoHeader;
+    HBITMAP             m_hBitmap;
 };
 
 }   //  End of namespace  Common
