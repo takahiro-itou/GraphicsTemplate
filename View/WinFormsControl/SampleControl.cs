@@ -1,4 +1,17 @@
-﻿
+﻿//  -*-  coding: utf-8-with-signature;  mode: c++  -*-  //
+/*************************************************************************
+**                                                                      **
+**                  ---   Graphics Test Project.   ---                  **
+**                                                                      **
+**          Copyright (C), 2025-2025, Takahiro Itou                     **
+**          All Rights Reserved.                                        **
+**                                                                      **
+**          License: (See COPYING or LICENSE files)                     **
+**          GNU Affero General Public License (AGPL) version 3,         **
+**          or (at your option) any later version.                      **
+**                                                                      **
+*************************************************************************/
+
 using System.ComponentModel;
 
 namespace WinFormsControl
@@ -51,10 +64,9 @@ public partial class SampleControl : UserControl
         grpBuffer.FillRectangle(brushBG, grpBuffer.VisibleClipBounds);
 
         hDC = grpBuffer.GetHdc();
-        WinAPI.BitBlt(hDC, 8, 8, 184, 84, hDisplayDC,
-                Screen.PrimaryScreen.Bounds.Width - 184,
-                Screen.PrimaryScreen.Bounds.Height - 84,
-                WinAPI.SRCCOPY);
+        m_image.createImage(hDC, 200, 100);
+        m_image.drawSample();
+        m_image.drawImage(hDC, 0, 0, 200, 100, 0, 0);
         grpBuffer.ReleaseHdc(hDC);
 
         grpBuffer.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300);
@@ -152,6 +164,9 @@ public partial class SampleControl : UserControl
     {
         OnRunButtonClick(e);
     }
+
+    private SampleWrapper.Images.FullColorImage m_image
+        = new SampleWrapper.Images.FullColorImage();
 
     private System.Drawing.Color    m_marginColor;
 
