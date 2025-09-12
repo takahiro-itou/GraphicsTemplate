@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
   <ImportGroup Label="PropertySheets">
   </ImportGroup>
 
@@ -18,8 +19,10 @@
     <ClCompile>
       <PreprocessorDefinitions>WIN32;$(SAMPLE_PPDEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SAMPLE_CORE_INC_DIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
     </Link>
   </ItemDefinitionGroup>
+
 </Project>
