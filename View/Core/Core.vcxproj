@@ -124,7 +124,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Core\Lib\Common\SampleDocument.cpp" />
     <ClCompile Include="..\..\Core\Lib\Images\FullColorImage.cpp" />
-    <ClCompile Include="Sample\BitmapRenderer.cpp" />
+    <ClCompile Include="Sample\Images\BitmapRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Core\Include\Sample\Common\SampleDocument.h" />
