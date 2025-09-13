@@ -127,7 +127,27 @@ public:
     /**
     **
     **/
-    void  *
+    inline  const   unsigned
+    getBytesPerLine()  const
+    {
+        return ( this->m_bytesPerLine );
+    }
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    inline  const   unsigned
+    getBytesPerPixel()  const
+    {
+        return ( this->m_bytesPerPixel );
+    }
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    inline  void  *
     getImage()
     {
         return ( this->m_lpBits );
