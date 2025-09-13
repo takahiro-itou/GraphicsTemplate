@@ -77,8 +77,34 @@ BitmapRenderer::~BitmapRenderer()
 //
 
 //----------------------------------------------------------------
-//    サンプル画像を描画する。
+//    イメージを作成する。
 //
+
+int
+BitmapRenderer::createImage(
+        const  HDC  hDC,
+        const  int  nWidth,
+        const  int  nHeight)
+{
+    return ( 0 );
+}
+
+//----------------------------------------------------------------
+//    イメージをデバイスに表示する。
+//
+
+int
+BitmapRenderer::drawImage(
+        const  HDC  hDC,
+        const  int  dx,
+        const  int  dy,
+        const  int  w,
+        const  int  h,
+        const  int  sx,
+        const  int  sy)
+{
+    return ( 0 );
+}
 
 //========================================================================
 //
