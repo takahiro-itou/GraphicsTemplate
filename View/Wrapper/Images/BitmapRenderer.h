@@ -84,6 +84,31 @@ public:
 //
 //    Public Member Functions (Virtual Functions).
 //
+public:
+
+    //----------------------------------------------------------------
+    /**   イメージを作成する。
+    **
+    **/
+    virtual  int
+    createImage(
+            IntPtr      hDC,
+            const  int  nWidth,
+            const  int  nHeight);
+
+    //----------------------------------------------------------------
+    /**   イメージをデバイスに表示する。
+    **
+    **/
+    virtual  int
+    drawImage(
+            IntPtr      hDC,
+            const  int  dx,
+            const  int  dy,
+            const  int  w,
+            const  int  h,
+            const  int  sx,
+            const  int  sy);
 
 //========================================================================
 //
@@ -110,7 +135,9 @@ public:
 //    Member Variables.
 //
 private:
+    typedef     Sample::Images::BitmapRenderer  WrapTarget;
 
+    WrapTarget  *   m_ptrObj;
 };
 
 }   //  End of namespace  Images

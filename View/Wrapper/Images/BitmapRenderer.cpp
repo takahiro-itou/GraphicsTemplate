@@ -47,6 +47,7 @@ namespace  {
 //
 
 BitmapRenderer::BitmapRenderer()
+    : m_ptrObj(new WrapTarget())
 {
 }
 
@@ -57,6 +58,10 @@ BitmapRenderer::BitmapRenderer()
 
 BitmapRenderer::~BitmapRenderer()
 {
+    //  マネージドリソースを破棄する。              //
+
+    //  続いて、アンマネージドリソースも破棄する。  //
+    this->!BitmapRenderer();
 }
 
 //----------------------------------------------------------------
@@ -66,6 +71,8 @@ BitmapRenderer::~BitmapRenderer()
 
 BitmapRenderer::!BitmapRenderer()
 {
+    delete  this->m_ptrObj;
+    this->m_ptrObj  = nullptr;
 }
 
 //========================================================================
@@ -87,6 +94,42 @@ BitmapRenderer::!BitmapRenderer()
 //
 //    Public Member Functions (Virtual Functions).
 //
+
+//----------------------------------------------------------------
+//    イメージを作成する。
+//
+
+int
+BitmapRenderer::createImage(
+        IntPtr      hDC,
+        const  int  nWidth,
+        const  int  nHeight)
+{
+    return  this->m_ptrObj->createImage(
+                static_cast<HDC>(hDC.ToPointer()),
+                nWidth, nHeight
+    );
+}
+
+//----------------------------------------------------------------
+//    イメージをデバイスに表示する。
+//
+
+int
+BitmapRenderer::drawImage(
+        IntPtr      hDC,
+        const  int  dx,
+        const  int  dy,
+        const  int  w,
+        const  int  h,
+        const  int  sx,
+        const  int  sy)
+{
+    return  this->m_ptrObj->drawImage(
+                static_cast<HDC>(hDC.ToPointer()),
+                dx, dy, w, h, sx, sy
+    );
+}
 
 //========================================================================
 //
