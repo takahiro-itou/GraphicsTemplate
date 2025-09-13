@@ -25,6 +25,11 @@
 
 #include    "Sample/Common/SampleSettings.h"
 
+#if !defined( SAMPLE_SYS_INCLUDED_WINDOWS_H )
+#    include    <windows.h>
+#    define   SAMPLE_SYS_INCLUDED_WINDOWS_H
+#endif
+
 
 SAMPLE_NAMESPACE_BEGIN
 namespace  Images  {
