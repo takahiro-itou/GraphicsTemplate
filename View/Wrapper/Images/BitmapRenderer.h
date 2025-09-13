@@ -20,6 +20,11 @@
 
 #pragma once
 
+#include    "Sample/Images/BitmapRenderer.h"
+
+#include    "FullColorImage.h"
+
+
 using namespace System;
 
 namespace  SampleWrapper  {
@@ -84,6 +89,31 @@ public:
 //
 //    Public Member Functions (Virtual Functions).
 //
+public:
+
+    //----------------------------------------------------------------
+    /**   イメージを作成する。
+    **
+    **/
+    virtual  FullColorImage ^
+    createImage(
+            IntPtr      hDC,
+            const  int  nWidth,
+            const  int  nHeight);
+
+    //----------------------------------------------------------------
+    /**   イメージをデバイスに表示する。
+    **
+    **/
+    virtual  int
+    drawImage(
+            IntPtr      hDC,
+            const  int  dx,
+            const  int  dy,
+            const  int  w,
+            const  int  h,
+            const  int  sx,
+            const  int  sy);
 
 //========================================================================
 //
@@ -94,6 +124,22 @@ public:
 //
 //    Accessors.
 //
+
+//========================================================================
+//
+//    Properties.
+//
+public:
+
+    //----------------------------------------------------------------
+    /**   イメージオブジェクトを取得する。
+    **
+    **/
+    property    FullColorImage ^
+    Image
+    {
+        FullColorImage^ get();
+    }
 
 //========================================================================
 //
@@ -110,7 +156,11 @@ public:
 //    Member Variables.
 //
 private:
+    typedef     Sample::Images::BitmapRenderer  WrapTarget;
 
+    WrapTarget  *   m_ptrObj;
+
+    FullColorImage^ m_wImage;
 };
 
 }   //  End of namespace  Images

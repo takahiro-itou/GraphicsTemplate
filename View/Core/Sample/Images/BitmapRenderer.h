@@ -25,6 +25,11 @@
 
 #include    "Sample/Common/SampleSettings.h"
 
+#if !defined( SAMPLE_SYS_INCLUDED_WINDOWS_H )
+#    include    <windows.h>
+#    define   SAMPLE_SYS_INCLUDED_WINDOWS_H
+#endif
+
 
 SAMPLE_NAMESPACE_BEGIN
 namespace  Images  {
@@ -81,6 +86,31 @@ public:
 //
 //    Public Member Functions (Virtual Functions).
 //
+public:
+
+    //----------------------------------------------------------------
+    /**   イメージを作成する。
+    **
+    **/
+    virtual  int
+    createImage(
+            const  HDC  hDC,
+            const  int  nWidth,
+            const  int  nHeight);
+
+    //----------------------------------------------------------------
+    /**   イメージをデバイスに表示する。
+    **
+    **/
+    virtual  int
+    drawImage(
+            const  HDC  hDC,
+            const  int  dx,
+            const  int  dy,
+            const  int  w,
+            const  int  h,
+            const  int  sx,
+            const  int  sy);
 
 //========================================================================
 //
@@ -91,6 +121,17 @@ public:
 //
 //    Accessors.
 //
+public:
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    void  *
+    getImage()
+    {
+        return ( this->m_lpBits );
+    }
 
 //========================================================================
 //
@@ -101,11 +142,42 @@ public:
 //
 //    For Internal Use Only.
 //
+private:
+
+    inline  static  unsigned
+    getBytesPerLine(
+            const  int  nWidth,
+            const  int  nDepth)
+    {
+        return  static_cast<unsigned>(
+            (((long)nWidth * nDepth + 31) / 32) * 4
+        );
+    }
+
+    inline  static  unsigned
+    getBytesPerPixel(
+            const  int  nDepth)
+    {
+        return  static_cast<unsigned>((nDepth + 7) / 8);
+    }
 
 //========================================================================
 //
 //    Member Variables.
 //
+private:
+
+    int                 m_iW;
+    int                 m_iH;
+    int                 m_iD;
+
+    unsigned            m_bytesPerLine;
+    unsigned            m_bytesPerPixel;
+
+    void *              m_lpBits;
+    BITMAPINFO *        m_Info;
+    BITMAPINFOHEADER    m_bInfoHeader;
+    HBITMAP             m_hBitmap;
 
 //========================================================================
 //
