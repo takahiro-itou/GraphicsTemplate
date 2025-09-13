@@ -86,17 +86,19 @@ BitmapRenderer::createImage(
         const  int  nWidth,
         const  int  nHeight)
 {
+    constexpr   int  BIT_DEPTH  = 24;
+
     this->m_iW  = nWidth;
     this->m_iH  = nHeight;
-    this->m_iD  = 24;
+    this->m_iD  = BIT_DEPTH;
 
-    this->m_bytesPerLine    = getBytesPerLine(nWidth, 24);
-    this->m_bytesPerPixel   = getBytesPerPixel(24);
+    this->m_bytesPerLine    = computeBytesPerLine(nWidth, BIT_DEPTH);
+    this->m_bytesPerPixel   = computeBytesPerPixel(BIT_DEPTH);
 
     this->m_bInfoHeader.biSize          = sizeof(BITMAPINFOHEADER);
     this->m_bInfoHeader.biWidth         = nWidth;
     this->m_bInfoHeader.biHeight        = nHeight;
-    this->m_bInfoHeader.biBitCount      = 24;
+    this->m_bInfoHeader.biBitCount      = BIT_DEPTH;
     this->m_bInfoHeader.biPlanes        = 1;
     this->m_bInfoHeader.biXPelsPerMeter = 0;
     this->m_bInfoHeader.biYPelsPerMeter = 0;

@@ -59,6 +59,8 @@ BitmapRenderer::BitmapRenderer()
 BitmapRenderer::~BitmapRenderer()
 {
     //  マネージドリソースを破棄する。              //
+    delete  this->m_wImage;
+    this->m_wImage  = nullptr;
 
     //  続いて、アンマネージドリソースも破棄する。  //
     this->!BitmapRenderer();
@@ -112,8 +114,8 @@ BitmapRenderer::createImage(
                 nWidth, nHeight
     );
 
-    const  unsigned cbPixel = 3;
-    const  unsigned lStride = (nWidth * 24 + 31) / 32 * 4;
+    const  unsigned cbPixel = this->m_ptrObj->getBytesPerPixel();
+    const  unsigned lStride = this->m_ptrObj->getBytesPerLine();
 
     this->m_wImage  = gcnew FullColorImage();
     this->m_wImage->createImage(
