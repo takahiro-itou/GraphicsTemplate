@@ -144,8 +144,12 @@ public:
 //
 private:
 
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
     inline  static  unsigned
-    getBytesPerLine(
+    computeBytesPerLine(
             const  int  nWidth,
             const  int  nDepth)
     {
@@ -154,8 +158,12 @@ private:
         );
     }
 
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
     inline  static  unsigned
-    getBytesPerPixel(
+    computeBytesPerPixel(
             const  int  nDepth)
     {
         return  static_cast<unsigned>((nDepth + 7) / 8);
