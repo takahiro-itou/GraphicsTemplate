@@ -64,7 +64,9 @@ public partial class SampleControl : UserControl
         grpBuffer.FillRectangle(brushBG, grpBuffer.VisibleClipBounds);
 
         hDC = grpBuffer.GetHdc();
-        m_image = m_bitmapRenderer.createImage(hDC, 200, 100);
+        if ( m_image == null ) {
+            m_image = m_bitmapRenderer.createImage(hDC, 200, 100);
+        }
         m_image.drawSample();
         m_bitmapRenderer.drawImage(hDC, 0, 0, 200, 100, 0, 0);
         grpBuffer.ReleaseHdc(hDC);

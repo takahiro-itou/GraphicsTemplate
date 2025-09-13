@@ -59,6 +59,8 @@ BitmapRenderer::BitmapRenderer()
 BitmapRenderer::~BitmapRenderer()
 {
     //  マネージドリソースを破棄する。              //
+    delete  this->m_wImage;
+    this->m_wImage  = nullptr;
 
     //  続いて、アンマネージドリソースも破棄する。  //
     this->!BitmapRenderer();
