@@ -22,6 +22,8 @@
 
 #include    "Sample/Images/BitmapRenderer.h"
 
+#include    "FullColorImage.h"
+
 
 using namespace System;
 
@@ -93,7 +95,7 @@ public:
     /**   イメージを作成する。
     **
     **/
-    virtual  int
+    virtual  FullColorImage ^
     createImage(
             IntPtr      hDC,
             const  int  nWidth,
@@ -125,6 +127,22 @@ public:
 
 //========================================================================
 //
+//    Properties.
+//
+public:
+
+    //----------------------------------------------------------------
+    /**   イメージオブジェクトを取得する。
+    **
+    **/
+    property    FullColorImage ^
+    Image
+    {
+        FullColorImage^ get();
+    }
+
+//========================================================================
+//
 //    Protected Member Functions.
 //
 
@@ -141,6 +159,8 @@ private:
     typedef     Sample::Images::BitmapRenderer  WrapTarget;
 
     WrapTarget  *   m_ptrObj;
+
+    FullColorImage^ m_wImage;
 };
 
 }   //  End of namespace  Images

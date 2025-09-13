@@ -99,16 +99,31 @@ BitmapRenderer::!BitmapRenderer()
 //    イメージを作成する。
 //
 
-int
+FullColorImage ^
 BitmapRenderer::createImage(
         IntPtr      hDC,
         const  int  nWidth,
         const  int  nHeight)
 {
-    return  this->m_ptrObj->createImage(
+    int ret;
+
+    ret = this->m_ptrObj->createImage(
                 static_cast<HDC>(hDC.ToPointer()),
                 nWidth, nHeight
     );
+
+    const  unsigned cbPixel = 3;
+    const  unsigned lStride = (nWidth * 24 + 31) / 32 * 4
+    this->m_wImage  = gcnew FullColorImage();
+    this->m_wImage.createImage(
+            nWidth,
+            nHeight,
+            cbPixel,
+            lStride,
+            this->m_ptrObj->getImage()
+    );
+
+    return ( this->m_wImage );
 }
 
 //----------------------------------------------------------------
@@ -140,6 +155,21 @@ BitmapRenderer::drawImage(
 //
 //    Accessors.
 //
+
+//========================================================================
+//
+//    Properties.
+//
+
+//----------------------------------------------------------------
+//    イメージオブジェクトを取得する。
+//
+
+property    FullColorImage ^
+BitmapRenderer::Image::get()
+{
+    return ( this->m_image );
+}
 
 //========================================================================
 //
