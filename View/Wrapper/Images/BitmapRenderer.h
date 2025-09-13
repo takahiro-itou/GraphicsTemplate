@@ -20,6 +20,9 @@
 
 #pragma once
 
+#include    "Sample/Images/BitmapRenderer.h"
+
+
 using namespace System;
 
 namespace  SampleWrapper  {
