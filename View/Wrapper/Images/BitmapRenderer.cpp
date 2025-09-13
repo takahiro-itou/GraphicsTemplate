@@ -113,9 +113,10 @@ BitmapRenderer::createImage(
     );
 
     const  unsigned cbPixel = 3;
-    const  unsigned lStride = (nWidth * 24 + 31) / 32 * 4
+    const  unsigned lStride = (nWidth * 24 + 31) / 32 * 4;
+
     this->m_wImage  = gcnew FullColorImage();
-    this->m_wImage.createImage(
+    this->m_wImage->createImage(
             nWidth,
             nHeight,
             cbPixel,
@@ -165,10 +166,10 @@ BitmapRenderer::drawImage(
 //    イメージオブジェクトを取得する。
 //
 
-property    FullColorImage ^
+FullColorImage ^
 BitmapRenderer::Image::get()
 {
-    return ( this->m_image );
+    return ( this->m_wImage );
 }
 
 //========================================================================
