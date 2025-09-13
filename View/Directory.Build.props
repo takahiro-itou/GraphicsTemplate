@@ -6,7 +6,11 @@
   </ImportGroup>
 
   <ImportGroup Label="PropertySheets">
-    <Import Project="Props\Defaults.props" />
+    <Import Project="Props\Definitions.props" />
+  </ImportGroup>
+
+  <ImportGroup Label="PropertySheets">
+    <Import Project="Props\BuildOptions.props" />
   </ImportGroup>
 
 </Project>
