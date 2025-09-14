@@ -15,14 +15,4 @@
    <_PropertySheetDisplayName>Sample Property Sheet</_PropertySheetDisplayName>
   </PropertyGroup>
 
-  <ItemDefinitionGroup>
-    <ClCompile>
-      <PreprocessorDefinitions>WIN32;$(SAMPLE_PPDEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SAMPLE_CORE_INC_DIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <WarningLevel>Level3</WarningLevel>
-    </ClCompile>
-    <Link>
-    </Link>
-  </ItemDefinitionGroup>
-
 </Project>
