@@ -18,17 +18,15 @@
 **      @file       Images/BitmapRenderer.cpp
 **/
 
-#include "StdAfx.h"
-
-#include "BitmapRenderer.h"
+#include    "Sample/Images/BitmapRenderer.h"
 
 
-namespace  SampleWrapper  {
+SAMPLE_NAMESPACE_BEGIN
 namespace  Images  {
 
 namespace  {
 
-}   //  End of (Unnamed) namespace
+}   //  End of (Unnamed) namespace.
 
 
 //========================================================================
@@ -44,10 +42,8 @@ namespace  {
 //----------------------------------------------------------------
 //    インスタンスを初期化する
 //  （デフォルトコンストラクタ）。
-//
 
 BitmapRenderer::BitmapRenderer()
-    : m_ptrObj(new WrapTarget())
 {
 }
 
@@ -58,23 +54,6 @@ BitmapRenderer::BitmapRenderer()
 
 BitmapRenderer::~BitmapRenderer()
 {
-    //  マネージドリソースを破棄する。              //
-    delete  this->m_wImage;
-    this->m_wImage  = nullptr;
-
-    //  続いて、アンマネージドリソースも破棄する。  //
-    this->!BitmapRenderer();
-}
-
-//----------------------------------------------------------------
-//    インスタンスを破棄する
-//  （ファイナライザ）。
-//
-
-BitmapRenderer::!BitmapRenderer()
-{
-    delete  this->m_ptrObj;
-    this->m_ptrObj  = nullptr;
 }
 
 //========================================================================
@@ -101,32 +80,39 @@ BitmapRenderer::!BitmapRenderer()
 //    イメージを作成する。
 //
 
-FullColorImage ^
+int
 BitmapRenderer::createImage(
-        IntPtr      hDC,
+        const  HDC  hDC,
         const  int  nWidth,
         const  int  nHeight)
 {
-    int ret;
+    constexpr   int  BIT_DEPTH  = 24;
 
-    ret = this->m_ptrObj->createImage(
-                static_cast<HDC>(hDC.ToPointer()),
-                nWidth, nHeight
-    );
+    this->m_iW  = nWidth;
+    this->m_iH  = nHeight;
+    this->m_iD  = BIT_DEPTH;
 
-    const  unsigned cbPixel = this->m_ptrObj->getBytesPerPixel();
-    const  unsigned lStride = this->m_ptrObj->getBytesPerLine();
+    this->m_bytesPerLine    = computeBytesPerLine(nWidth, BIT_DEPTH);
+    this->m_bytesPerPixel   = computeBytesPerPixel(BIT_DEPTH);
 
-    this->m_wImage  = gcnew FullColorImage();
-    this->m_wImage->createImage(
-            nWidth,
-            nHeight,
-            cbPixel,
-            lStride,
-            this->m_ptrObj->getImage()
-    );
+    this->m_bInfoHeader.biSize          = sizeof(BITMAPINFOHEADER);
+    this->m_bInfoHeader.biWidth         = nWidth;
+    this->m_bInfoHeader.biHeight        = nHeight;
+    this->m_bInfoHeader.biBitCount      = BIT_DEPTH;
+    this->m_bInfoHeader.biPlanes        = 1;
+    this->m_bInfoHeader.biXPelsPerMeter = 0;
+    this->m_bInfoHeader.biYPelsPerMeter = 0;
+    this->m_bInfoHeader.biClrUsed       = 0;
+    this->m_bInfoHeader.biClrImportant  = 0;
+    this->m_bInfoHeader.biCompression   = BI_RGB;
+    this->m_bInfoHeader.biSizeImage     = this->m_bytesPerLine * nHeight;
 
-    return ( this->m_wImage );
+    this->m_Info    = (BITMAPINFO *)(&(this->m_bInfoHeader));
+    this->m_hBitmap = CreateDIBSection(
+                            hDC, this->m_Info, DIB_RGB_COLORS,
+                            (&m_lpBits), NULL, 0);
+
+    return ( this->m_hBitmap != 0 );
 }
 
 //----------------------------------------------------------------
@@ -135,7 +121,7 @@ BitmapRenderer::createImage(
 
 int
 BitmapRenderer::drawImage(
-        IntPtr      hDC,
+        const  HDC  hDC,
         const  int  dx,
         const  int  dy,
         const  int  w,
@@ -143,10 +129,16 @@ BitmapRenderer::drawImage(
         const  int  sx,
         const  int  sy)
 {
-    return  this->m_ptrObj->drawImage(
-                static_cast<HDC>(hDC.ToPointer()),
-                dx, dy, w, h, sx, sy
-    );
+    HDC     hMemDC  = ::CreateCompatibleDC(hDC);
+    HGDIOBJ hOldBmp = ::SelectObject(hMemDC, this->m_hBitmap);
+
+    ::BitBlt(hDC, dx, dy, w, h, hMemDC, sx, sy, SRCCOPY);
+    ::GdiFlush();
+
+    ::SelectObject(hMemDC, hOldBmp);
+    ::DeleteDC(hMemDC);
+
+    return ( 0 );
 }
 
 //========================================================================
@@ -161,21 +153,6 @@ BitmapRenderer::drawImage(
 
 //========================================================================
 //
-//    Properties.
-//
-
-//----------------------------------------------------------------
-//    イメージオブジェクトを取得する。
-//
-
-FullColorImage ^
-BitmapRenderer::Image::get()
-{
-    return ( this->m_wImage );
-}
-
-//========================================================================
-//
 //    Protected Member Functions.
 //
 
@@ -185,4 +162,4 @@ BitmapRenderer::Image::get()
 //
 
 }   //  End of namespace  Images
-}   //  End of namespace  SampleWrapper
+SAMPLE_NAMESPACE_END

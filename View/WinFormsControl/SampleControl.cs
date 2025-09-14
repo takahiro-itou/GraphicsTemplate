@@ -64,9 +64,11 @@ public partial class SampleControl : UserControl
         grpBuffer.FillRectangle(brushBG, grpBuffer.VisibleClipBounds);
 
         hDC = grpBuffer.GetHdc();
-        m_image.createImage(hDC, 200, 100);
+        if ( m_image == null ) {
+            m_image = m_bitmapRenderer.createImage(hDC, 200, 100);
+        }
         m_image.drawSample();
-        m_image.drawImage(hDC, 0, 0, 200, 100, 0, 0);
+        m_bitmapRenderer.drawImage(hDC, 0, 0, 200, 100, 0, 0);
         grpBuffer.ReleaseHdc(hDC);
 
         grpBuffer.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300);
@@ -165,8 +167,9 @@ public partial class SampleControl : UserControl
         OnRunButtonClick(e);
     }
 
-    private SampleWrapper.Images.FullColorImage m_image
-        = new SampleWrapper.Images.FullColorImage();
+    private SampleWrapper.Images.FullColorImage?    m_image;
+    private SampleWrapper.Images.BitmapRenderer     m_bitmapRenderer
+        = new SampleWrapper.Images.BitmapRenderer();
 
     private System.Drawing.Color    m_marginColor;
 

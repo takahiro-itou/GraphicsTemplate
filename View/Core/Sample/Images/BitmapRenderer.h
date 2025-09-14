@@ -20,14 +20,18 @@
 
 #pragma once
 
-#include    "Sample/Images/BitmapRenderer.h"
+#if !defined( SAMPLE_IMAGES_INCLUDED_BITMAP_RENDERER_H )
+#    define   SAMPLE_IMAGES_INCLUDED_BITMAP_RENDERER_H
 
-#include    "FullColorImage.h"
+#include    "Sample/Common/SampleSettings.h"
+
+#if !defined( SAMPLE_SYS_INCLUDED_WINDOWS_H )
+#    include    <windows.h>
+#    define   SAMPLE_SYS_INCLUDED_WINDOWS_H
+#endif
 
 
-using namespace System;
-
-namespace  SampleWrapper  {
+SAMPLE_NAMESPACE_BEGIN
 namespace  Images  {
 
 //========================================================================
@@ -35,7 +39,7 @@ namespace  Images  {
 //    BitmapRenderer  class.
 //
 
-public ref  class  BitmapRenderer
+class  BitmapRenderer
 {
 
 //========================================================================
@@ -63,13 +67,6 @@ public:
     **/
     virtual  ~BitmapRenderer();
 
-    //----------------------------------------------------------------
-    /**   インスタンスを破棄する
-    **  （ファイナライザ）。
-    **
-    **/
-    !BitmapRenderer();
-
 //========================================================================
 //
 //    Public Member Functions (Implement Pure Virtual).
@@ -95,9 +92,9 @@ public:
     /**   イメージを作成する。
     **
     **/
-    virtual  FullColorImage ^
+    virtual  int
     createImage(
-            IntPtr      hDC,
+            const  HDC  hDC,
             const  int  nWidth,
             const  int  nHeight);
 
@@ -107,7 +104,7 @@ public:
     **/
     virtual  int
     drawImage(
-            IntPtr      hDC,
+            const  HDC  hDC,
             const  int  dx,
             const  int  dy,
             const  int  w,
@@ -124,21 +121,36 @@ public:
 //
 //    Accessors.
 //
-
-//========================================================================
-//
-//    Properties.
-//
 public:
 
     //----------------------------------------------------------------
-    /**   イメージオブジェクトを取得する。
+    /**
     **
     **/
-    property    FullColorImage ^
-    Image
+    inline  const   unsigned
+    getBytesPerLine()  const
     {
-        FullColorImage^ get();
+        return ( this->m_bytesPerLine );
+    }
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    inline  const   unsigned
+    getBytesPerPixel()  const
+    {
+        return ( this->m_bytesPerPixel );
+    }
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    inline  void  *
+    getImage()
+    {
+        return ( this->m_lpBits );
     }
 
 //========================================================================
@@ -150,18 +162,65 @@ public:
 //
 //    For Internal Use Only.
 //
+private:
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    inline  static  unsigned
+    computeBytesPerLine(
+            const  int  nWidth,
+            const  int  nDepth)
+    {
+        return  static_cast<unsigned>(
+            (((long)nWidth * nDepth + 31) / 32) * 4
+        );
+    }
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    inline  static  unsigned
+    computeBytesPerPixel(
+            const  int  nDepth)
+    {
+        return  static_cast<unsigned>((nDepth + 7) / 8);
+    }
 
 //========================================================================
 //
 //    Member Variables.
 //
 private:
-    typedef     Sample::Images::BitmapRenderer  WrapTarget;
 
-    WrapTarget  *   m_ptrObj;
+    int                 m_iW;
+    int                 m_iH;
+    int                 m_iD;
 
-    FullColorImage^ m_wImage;
+    unsigned            m_bytesPerLine;
+    unsigned            m_bytesPerPixel;
+
+    void *              m_lpBits;
+    BITMAPINFO *        m_Info;
+    BITMAPINFOHEADER    m_bInfoHeader;
+    HBITMAP             m_hBitmap;
+
+//========================================================================
+//
+//    Other Features.
+//
+private:
+    typedef     BitmapRenderer      This;
+    BitmapRenderer      (const  This  &);
+    This &  operator =  (const  This  &);
+public:
+    //  テストクラス。  //
+    friend  class   BitmapRendererTest;
 };
 
 }   //  End of namespace  Images
-}   //  End of namespace  SampleWrapper
+SAMPLE_NAMESPACE_END
+
+#endif
