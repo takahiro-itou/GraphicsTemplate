@@ -79,6 +79,9 @@
     </Link>
   </ItemDefinitionGroup>
 
+  <Import Project="Props\Definitions.props" />
+  <Import Project="Props\BuildOptions.props" />
+
   <ItemGroup>
     <ClCompile Include="..\..\Core\Lib\Common\SampleDocument.cpp" />
     <ClCompile Include="..\..\Core\Lib\Images\FullColorImage.cpp" />
