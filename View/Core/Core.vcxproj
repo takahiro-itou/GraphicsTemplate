@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+  <!--
   <Import Project="..\Props\ProjectConfigs.props" />
+  -->
 
   <PropertyGroup Label="Globals">
     <Keyword>Win32Proj</Keyword>
@@ -79,8 +81,10 @@
     </Link>
   </ItemDefinitionGroup>
 
+  <!--
   <Import Project="..\Props\Definitions.props" />
   <Import Project="..\Props\BuildOptions.props" />
+  -->
 
   <ItemGroup>
     <ClCompile Include="..\..\Core\Lib\Common\SampleDocument.cpp" />
