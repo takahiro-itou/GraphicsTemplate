@@ -2,8 +2,8 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\Objects\$(Platform)-$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\Libs\$(Platform)-$(Configuration)\</OutDir>
   </PropertyGroup>
 
 </Project>
