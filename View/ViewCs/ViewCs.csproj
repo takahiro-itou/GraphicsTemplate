@@ -12,6 +12,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <Import Project="..\Props\OutputApps.props" />
+
   <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-windows' ">
     <ProjectReference Include="..\Cli.Net8\Wrapper.Net80.vcxproj" />
   </ItemGroup>
