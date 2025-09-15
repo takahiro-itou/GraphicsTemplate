@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <IntDir>$(SolutionDir)Objects\$(ProjectName)\$(Platform)-$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)Objs$(ProjectName)\$(Platform)-$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)Bin\$(Platform)-$(Configuration)\</OutDir>
   </PropertyGroup>
 
