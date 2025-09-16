@@ -1,9 +1,10 @@
 
-Debug/
-Release/
 ipch/
-bin/
 obj/
+
+/Bin/
+/Libs/
+/Objs/
 
 /.vs/
 /*.sdf
