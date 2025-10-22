@@ -6,6 +6,7 @@
     <BIN_BASE_DIR>$(SolutionDir)Bin</BIN_BASE_DIR>
 
     <IntDir>$(OBJ_BASE_DIR)\$(Platform)-$(Configuration)\$(ProjectName)\</IntDir>
+    <IntermediateOutputPath>$(OBJ_BASE_DIR)\$(Platform)-$(Configuration)\$(ProjectName)\</IntermediateOutputPath>>
     <OutDir>$(BIN_BASE_DIR)\$(Platform)-$(Configuration)\</OutDir>
   </PropertyGroup>
 
