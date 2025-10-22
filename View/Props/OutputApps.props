@@ -4,10 +4,11 @@
   <PropertyGroup>
     <OBJ_BASE_DIR>$(SolutionDir)Objs</OBJ_BASE_DIR>
     <BIN_BASE_DIR>$(SolutionDir)Bin</BIN_BASE_DIR>
+    <CONFIG_NAME>$(Platform)-$(Configuration)</CONFIG_NAME>
 
-    <IntDir>$(OBJ_BASE_DIR)\$(Platform)-$(Configuration)\$(ProjectName)\</IntDir>
-    <IntermediateOutputPath>$(OBJ_BASE_DIR)\$(Platform)-$(Configuration)\$(ProjectName)\</IntermediateOutputPath>>
-    <OutDir>$(BIN_BASE_DIR)\$(Platform)-$(Configuration)\</OutDir>
+    <IntDir>$(OBJ_BASE_DIR)\$(CONFIG_NAME)\$(ProjectName)\</IntDir>
+    <IntermediateOutputPath>$(OBJ_BASE_DIR)\$(CONFIG_NAME)\$(ProjectName)\</IntermediateOutputPath>>
+    <OutDir>$(BIN_BASE_DIR)\$(CONFIG_NAME)\</OutDir>
   </PropertyGroup>
 
 </Project>
