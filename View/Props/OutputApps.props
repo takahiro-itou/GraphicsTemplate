@@ -6,9 +6,9 @@
     <BIN_BASE_DIR>$(SolutionDir)Bin</BIN_BASE_DIR>
     <CONFIG_NAME>$(Platform)-$(Configuration)</CONFIG_NAME>
 
-    <IntDir>$(OBJ_BASE_DIR)\$(CONFIG_NAME)\$(ProjectName)\</IntDir>
+    <IntDir>$(OBJ_BASE_DIR)\$(CONFIG_NAME)\$(MSBuildProjectName)\</IntDir>
     <IntermediateOutputPath>$(OBJ_BASE_DIR)\$(CONFIG_NAME)\$(ProjectName)\</IntermediateOutputPath>>
-    <OutDir>$(BIN_BASE_DIR)\$(CONFIG_NAME)\</OutDir>
+    <OutDir>$(BIN_BASE_DIR)\$(CONFIG_NAME)\$(TargetFramework)\</OutDir>
   </PropertyGroup>
 
 </Project>

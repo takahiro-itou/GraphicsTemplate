@@ -3,6 +3,7 @@
 
   <PropertyGroup>
     <IntDir>$(SolutionDir)Objs\$(Platform)-$(Configuration)\$(ProjectName)\</IntDir>
+    <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
     <OutDir>$(SolutionDir)Libs\$(Platform)-$(Configuration)\$(ProjectName)\</OutDir>
   </PropertyGroup>
 
