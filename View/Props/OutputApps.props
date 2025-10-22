@@ -7,7 +7,7 @@
     <CONFIG_NAME>$(Platform)-$(Configuration)</CONFIG_NAME>
 
     <IntDir>$(OBJ_BASE_DIR)\$(CONFIG_NAME)\$(MSBuildProjectName)\</IntDir>
-    <IntermediateOutputPath>$(OBJ_BASE_DIR)\$(CONFIG_NAME)\$(ProjectName)\</IntermediateOutputPath>>
+    <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
     <OutDir>$(BIN_BASE_DIR)\$(CONFIG_NAME)\$(TargetFramework)\</OutDir>
   </PropertyGroup>
 
