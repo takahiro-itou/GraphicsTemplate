@@ -62,8 +62,8 @@
   <PropertyGroup Label="UserMacros">
   </PropertyGroup>
 
-  <Import Project="..\Props\OutputLibs.props" />
-  <Import Project="..\Props\OutputCommon.props" />
+  <Import Project="..\..\Props\OutputLibs.props" />
+  <Import Project="..\..\Props\OutputCommon.props" />
 
   <!--
     Import in Directory.Build.props

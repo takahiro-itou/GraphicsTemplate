@@ -12,7 +12,7 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
-  <Import Project="..\Props\OutputApps.props" />
+  <Import Project="..\..\Props\OutputApps.props" />
 
   <ItemGroup>
     <Import Include="System.Data" />
