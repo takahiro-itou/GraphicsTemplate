@@ -4,7 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "View\Core\Core.vcxproj", "{64D47941-C76A-4448-BAE1-62DE0B4C8AC5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{64D47941-C76A-4448-BAE1-62DE0B4C8AC5}"
 EndProject
 
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wrapper.Net80", "View\Cli.Net8\Wrapper.Net80.vcxproj", "{4869195C-1E29-42CF-9FB5-52CE89AC49B1}"
