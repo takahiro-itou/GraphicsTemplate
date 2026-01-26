@@ -1,4 +1,4 @@
 
 msbuild -restore -t:Rebuild     ^
     -p:Configuration="Release"  -p:Platform=x64     ^
-    View/SampleView.NetOld.sln
+    SampleView.NetOld.sln

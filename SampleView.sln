@@ -4,18 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{64D47941-C76A-4448-BAE1-62DE0B4C8AC5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "View\Core\Core.vcxproj", "{64D47941-C76A-4448-BAE1-62DE0B4C8AC5}"
 EndProject
 
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wrapper.Net80", "Cli.Net8\Wrapper.Net80.vcxproj", "{4869195C-1E29-42CF-9FB5-52CE89AC49B1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wrapper.Net80", "View\Cli.Net8\Wrapper.Net80.vcxproj", "{4869195C-1E29-42CF-9FB5-52CE89AC49B1}"
 EndProject
 
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsControl", "WinFormsControl\WinFormsControl.csproj", "{58D5A5EA-55FA-43CA-B205-7B1312FE1A79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsControl", "View\WinFormsControl\WinFormsControl.csproj", "{58D5A5EA-55FA-43CA-B205-7B1312FE1A79}"
 EndProject
 
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ViewVb", "ViewVb\ViewVb.vbproj", "{3446924D-6058-4767-B215-8FDBAEF1756C}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ViewVb", "View\ViewVb\ViewVb.vbproj", "{3446924D-6058-4767-B215-8FDBAEF1756C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewCs", "ViewCs\ViewCs.csproj", "{4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewCs", "View\ViewCs\ViewCs.csproj", "{4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}"
 EndProject
 
 Global
