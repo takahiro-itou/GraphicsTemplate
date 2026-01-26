@@ -5,7 +5,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <MyType>WindowsForms</MyType>
     <OutputType>WinExe</OutputType>
-    <Platforms>AnyCPU;x64;Win32</Platforms>
+    <Platforms>x64;Win32</Platforms>
     <RootNamespace>ViewVb</RootNamespace>
     <StartupObject>ViewVb.My.MyApplication</StartupObject>
     <TargetFrameworks>
@@ -24,7 +24,7 @@
     <ProjectReference Include="..\..\Cli.NetFramework4.8\Wrapper.Net48.vcxproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WinFormsControl\WinFormsControl.NetOld.csproj" />
+    <ProjectReference Include="..\..\WinFormsControl\WinFormsControl.NetOld.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -18,7 +18,7 @@
     <ProjectReference Include="..\..\Cli.NetFramework4.8\Wrapper.Net48.vcxproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WinFormsControl\WinFormsControl.NetOldcd .csproj" />
+    <ProjectReference Include="..\..\WinFormsControl\WinFormsControl.NetOldcd .csproj" />
   </ItemGroup>
 
 </Project>
