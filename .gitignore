@@ -1,15 +1,13 @@
 
 /.hg/
 
-Debug/
-Release/
-ipch/
-bin/
-obj/
-
 /Bin/
 /Libs/
 /Objs/
+
+ipch/
+bin/
+obj/
 
 /.vs/
 /*.sdf
