@@ -14,6 +14,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <Import Project="..\Props\OutputApps.props" />
+
   <ItemGroup>
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
@@ -21,10 +23,10 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
-    <ProjectReference Include="..\..\Cli.NetFramework4.8\Wrapper.Net48.vcxproj" />
+    <ProjectReference Include="..\Cli.NetFramework4.8\Wrapper.Net48.vcxproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\WinFormsControl\WinFormsControl.NetOld.csproj" />
+    <ProjectReference Include="..\WinFormsControl\WinFormsControl.NetOld.csproj" />
   </ItemGroup>
 
   <ItemGroup>
